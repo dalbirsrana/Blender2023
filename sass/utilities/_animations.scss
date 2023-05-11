@@ -1,0 +1,25 @@
+.hidden, .card {
+    opacity: 0;
+    // filter: blur(2px);
+    transform: translateY(40px); 
+    transition: all 1s  ease 200ms;
+}
+
+.show {
+    opacity: 1;
+    // filter: blur(0);
+    transform: translateX(0);
+}
+
+.fadeInLeft {transform: translateX(-100%); transition: all 1s  ease-out;}
+.show.fadeInLeft {transform: translateX(0);}
+
+.show.card {
+    transform: translate(0, 0);
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}

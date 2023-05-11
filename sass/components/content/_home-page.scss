@@ -1,0 +1,211 @@
+.home-page {
+    // Hero Section
+    section.hero {
+        padding: 0;
+        position: relative; 
+        min-height: 680px;
+        display: flex; justify-content: flex-start; align-items: center;
+        // background-color: hsla(0, 0%, 0%, 0.3);
+        .background {
+            position: absolute; z-index: -1; inset: 0; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;
+            & > img {width: 100%; height: 100%; object-fit: cover; object-position: center top;}
+        }
+
+        .content {max-width: 600px;}
+        .page-title {color: #ffffff; margin: 0 0 48px;}
+        .button {margin-right: 16px;}
+
+        @media (min-width: $md) {
+            min-height: 764px; margin-bottom: 0;
+            .page-title {font-size: 72px; line-height: 80px;}
+        }
+        @media (min-width: 1600px) {min-height: 880px;}
+    }
+
+
+    // Introduction Section
+    @media (min-width: $xl) {
+        section.intro {
+            .text {align-self: center;}
+            .button {margin-bottom: 3rem;}
+            p {margin-bottom: 3rem;}
+        }
+    }
+}
+
+
+
+section.discover {
+    background-color: $secondary;
+    h3, li {color: #ffffff;} 
+    h3 {max-width: 220px; margin-left: auto; margin-right: auto;}
+
+    .left {align-self: center;}
+    .slider-hold {
+        border-radius: 20px;
+        background-color: #ffffff;
+        padding: 24px 20px 100px;
+        .tns-outer {min-height: 400px;}
+        .slide {padding-bottom: 24px;}
+    }
+    @media (min-width: $md) {
+        h3 {max-width: 260px; margin-left: 0;}
+        .slider-hold {padding: 44px 44px 108px;}
+        #slider-discover-links {display: block;}
+    }
+    @media (min-width: $xl) {
+        .slider-hold {padding: 46px 88px 108px;}
+    }
+}
+
+#slider-discover {
+    display: flex; align-items: stretch;
+    h4 {color: $secondary; display: flex; align-items: center; justify-content: flex-start;} 
+
+    h4::before {
+        content: ""; display: block; height: 124px; width: 124px;
+        position: relative; margin-right: 30px;
+        background-position: center; background-repeat: no-repeat; background-size: contain;
+    }
+    .title-1::before {background-image: url("graphics/homepage_icons/respect.svg");} 
+    .title-2::before {background-image: url("graphics/homepage_icons/safety.svg");}
+    .title-3::before {background-image: url("graphics/homepage_icons/comfort.svg");}
+    .title-4::before {background-image: url("graphics/homepage_icons/supportive.svg");}
+    .title-5::before {background-image: url("graphics/homepage_icons/health.svg");}
+    .title-6::before {background-image: url("graphics/homepage_icons/feedbacks.svg");}
+}
+
+@property --cir{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value:0deg;
+}
+@keyframes circular {
+    from {--cir:0deg;}
+    to {--cir:360deg;}
+}
+#slider-discover-links {
+    display: none;
+    list-style: none; margin: 0; padding: 0;
+    li {
+        display: flex; align-items: center; justify-content: flex-start;
+        line-height: 32px; margin-bottom: 20px; cursor: pointer;
+        font-size: 22px; font-weight: 500;
+        color: rgba(255, 255, 255, 0.3);
+        transition: all 300ms ease;
+    }
+    li.tns-nav-active span {
+        animation: circular 3s linear forwards;
+        // background: conic-gradient( #ffffff 360deg, rgba(255, 255, 255, 0.2) 0deg );
+    }
+    li.tns-nav-active {color: #ffffff;}
+    li span {
+        --cir: 0deg;
+        position: relative; margin-right: 18px; margin-top: -6px;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background: conic-gradient( #ffffff var(--cir), rgba(255, 255, 255, 0.2) 0deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before{
+            content: "";
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background-color: $secondary;
+        }
+    }
+}
+
+
+
+
+section.where-to-start {
+    background-color: #ffffff;
+    header {
+        margin: 0 auto 2rem auto;
+        max-width: 840px;
+        text-align: center;
+    }
+    .tab {
+        height: 100%;
+        border: 1px solid #9b927b;
+        border-radius: 28px;
+        overflow: hidden;
+        figure {margin: 0;}
+        img {display: block; height: 100%; max-height: 300px; object-fit: cover; object-position: center;}
+    }
+    .content {
+        padding: 24px 20px;
+        position: relative;
+        @media (min-width: $md) {
+            min-height: 220px; max-width: 460px;
+            padding: 32px 40px 80px 40px;
+            a.button {position: absolute;bottom: 40px;}
+        }
+    }
+}
+
+
+section.career {
+    .text {align-self: center;}
+    .text > div {max-width: 416px;}
+    .image img {border-radius: 24px;}
+}
+
+
+//Latest News Footer Section
+section.latest-news {
+    background-color: #ffffff;
+
+    header {
+        margin-bottom: 3rem;
+        display: flex; 
+        justify-content: space-between;
+        align-items: flex-end;
+        > * {margin-bottom: 0;}
+        a {text-decoration: underline;}
+    }
+    article {
+        border: 1px solid #9b927b;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    figure {margin: 0;
+        img {
+            display: block;
+            height: 216px; width: 100%;
+            object-fit: cover; object-position: center;
+        }
+    }
+    .content {
+        position: relative;
+        flex-basis: 100%; padding: 16px 16px 50px;
+        time {display: block; font-size: 14px;}
+        h5 {margin: 10px 0 16px;}
+        a {color: $secondary;}
+        a:hover, a:focus {opacity: 0.8;}
+
+        .tag {
+            color: #665b3e;
+            position: absolute; bottom: 22px;
+            font-size: 14px; font-weight: 500; line-height: 16px;
+            height: 28px; padding: 7px 20px 5px 20px;
+            border: solid 1px #9b927b;
+            border-radius: 20px;
+        }
+
+        @media (min-width: $md) {
+            padding: 20px 24px 50px;
+        }
+    }
+
+
+}
+

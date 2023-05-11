@@ -1,0 +1,48 @@
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+	@include font__style-1__bold;
+	font-size: 16px; 
+	line-height: 24px;
+	border: none; 
+	border-radius: 30px;
+	background: $primary; 
+	color: #fff;
+	padding: 10px 16px;
+	height: 44px; 
+	min-width: 132px;
+	display: inline-flex; 
+	justify-content: center; 
+	align-items: center;
+	transition: all .3s ease;
+	&:visited, &:active {color: #fff;}
+	&:hover, &:focus {
+		background-color: $secondary;
+		color: #fff;
+		box-shadow: 0 3px 6px 2px #00000033;
+	}
+}
+
+@media (min-width: $md) {
+	.button,
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		font-size: 16px;
+		height: 54px;
+		padding: 10px 24px;
+	}
+}
+
+.button.white {
+	background-color: #fff; 
+	color: $secondary;
+	&:hover, &:focus {
+		background-color: $secondary;
+		color: $color__background-body;
+	}
+}

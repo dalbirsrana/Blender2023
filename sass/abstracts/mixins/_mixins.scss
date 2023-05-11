@@ -1,0 +1,39 @@
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+
+// font styles
+@mixin font__style-1__normal {
+    font-family: poppins, sans-serif;
+    font-weight: 400;
+}
+@mixin font__style-1__medium {
+    font-family: poppins, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+@mixin font__style-1__bold {
+    font-family: poppins, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@mixin font__style-2__normal {
+    font-family: p22-mackinac-pro, serif;
+    font-weight: 400;
+}
+@mixin font__style-2__medium {
+    font-family: p22-mackinac-pro, serif;
+    font-weight: 500;
+    font-style: normal;
+}

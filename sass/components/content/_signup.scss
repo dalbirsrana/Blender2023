@@ -1,0 +1,48 @@
+section.signup {
+    padding: $spacer * 6 $spacer * 5;
+    margin-bottom: $spacer * 6;
+
+    h2 {
+        margin: 0 0 $spacer * 3 0;
+        @include font__style-1__bold;
+        font-size: 22px;
+        @media (min-width: $md) {
+            font-size: 30px;
+        }
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: $spacer * 5;
+        &:last-child {
+            margin-bottom: 0;
+        }
+       
+        input[type=text], input[type=email] {
+            width: 100%;
+            line-height: normal;
+            padding: 8px;
+            padding-right: 46px;
+            appearance: none;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+        }
+    }
+
+    label {
+        position: absolute;
+        left: 8px;
+        padding: 8px;
+        z-index: -1;
+    }
+
+    input:valid + label,
+    input:not(:placeholder-shown) + label {
+        z-index: -1;
+        left: auto;
+        right: 8px;
+        font-size: 12px;
+        line-height: 1.2;
+    }
+} 

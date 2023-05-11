@@ -1,0 +1,12 @@
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+
+div.table-overflow { width: 100%; overflow-x: auto; }
+div.table-overflow { width: 100%; overflow-x: auto; }
+div.table-overflow + div.arrow { display: none; color: #c1c6d2 !important; text-align: center; }
+div.table-overflow + div.arrow::after { font-family: FontAwesome; font-size: 15px; content: '\f07e'; }
+div.table-overflow.show + div.arrow { position: relative; height: 30px; width: 100%; display: block; }
+div.table-overflow.show > table { margin-bottom: 0px !important; }

@@ -1,0 +1,70 @@
+/* --------------------------------------------
+Theme Name: Blender Media 2023
+Theme URI: http://underscores.me/
+Author: Dalbir
+Author URI: https://blendermedia.com/
+Description: 
+Version: 1.0.0
+Tested up to: 6.2
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: blender2023
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Blender Media 2023 is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+--------------------------------------------------------------*/
+
+// Import variables and mixins.
+@import "sass/abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "sass/generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "sass/generic/box-sizing";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "sass/base/base";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+@import "sass/layouts/container";
+@import "sass/layouts/grid-layout";
+@import "sass/layouts/header";
+@import "sass/layouts/footer";
+@import "sass/layouts/content-sidebar";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "sass/components/components";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+@import "sass/utilities/accessibility";
+
+/* Alignments
+--------------------------------------------- */
+@import "sass/utilities/alignments";
+
+// Animations
+@import "sass/utilities/animations";
