@@ -12,7 +12,7 @@ get_header();
 // get the current taxonomy term
 $term = get_queried_object();
 // vars
-$hero_image = get_field('bg_image', $term);
+$hero_image = get_field('background_image', $term);
 ?>
 	<main id="primary" class="site-main inner-page">
         

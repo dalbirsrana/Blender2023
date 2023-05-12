@@ -14,8 +14,8 @@
 	<footer id="colophon" class="site-footer">
 
 		<div class="container">
-			<div class="signup">
-				<h4>Subscribe to our newsletter</h4>
+			<div class="sign-up">
+				<h3>Subscribe to our newsletter</h3>
 				<div>
 					<form action="" method="post" name="newsletter" class="signup-form">
 						<div class="form-group">
@@ -24,8 +24,8 @@
 						<div class="form-group">
 							<input required placeholder="Email" type="text" name="email" id="id-email" />
 						</div>
-						<div class="form-group">
-							<button name="submit" type="submit"  id="nl-submit" class="button blue">Submit</button>
+						<div class="form-group submit">
+							<button name="submit" type="submit"  id="nl-submit" class="button">Submit</button>
 						</div>
 						<input type="hidden" name="g-recaptcha-response" id="recaptchaResponse1">
 					</form>
@@ -42,28 +42,31 @@
 
 				<div class="col-3 logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
-						<img width="124" height="124" src="<?php echo esc_url(get_template_directory_uri()); ?>/graphics/branding/omni_logo_white.svg" alt="logo Omni Quality Living">
+						<img width="125" height="109" src="<?php echo esc_url(get_template_directory_uri()); ?>/graphics/branding/omni_logo_white.svg" alt="logo Omni Quality Living">
 					</a>
 				</div>
 
-				<div class="col-6 menu">
+				<nav class="col-5 footer-menu">
 					<?php
 						wp_nav_menu(
 							array(
 								'theme_location'	=> 'menu-2',
 								'menu_id'			=> 'footer-menu',
-								'container'			=> 'nav',
-								'container_class'	=> 'menu-container',
+								'container'			=>  false
 							)
 						);
 					?>
-				</div>
+				</nav>
 
-				<div class="col-12 col-md-3 social">
-					<h6>Follow Us</h6>
-					<div class="social__links">
-						<a aria-label="Follow Us on Twitter" target="_blank" href="https://twitter.com/carbonneutraltd"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-						<a aria-label="Follow Us on Linked In" target="_blank" href="https://www.linkedin.com/company/carbonneutralroyalty/"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+				<div class="col-12 col-lg-4 social">
+					<div>
+						<h6>Follow Us</h6>
+						<div class="social__links">
+							<a aria-label="Follow Us on Facebook" target="_blank" href="https://facebook.com/omniway"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a aria-label="Follow Us on Twitter" target="_blank" href="https://www.twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							<a aria-label="Follow Us on Vimeo" target="_blank" href="https://vimeo.com/"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+							<a aria-label="Follow Us on Linked In" target="_blank" href="https://www.linkedin.com/company/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+						</div>
 					</div>
 				</div>
 
@@ -72,19 +75,21 @@
 		</div>
 
 		<div class="site-info">
-
 			<div class="container">
-				<ul>
-					<li class="copy">
-						<a href="<?php echo esc_url( home_url() ); ?>"><?php printf( esc_html__( '&copy; Omni Health Care ' ) ); ?><?php echo date('Y'); ?></a>
-					</li>
-					<li>
-						<a href="<?php echo esc_attr( esc_url( get_permalink(3) ) ); ?>"><?php esc_html_e( 'Privacy', 'blender2023' ) ?></a>
-					</li>
-					<li>
-						<a href="https://www.blendermedia.com" target="_blank">Designed & Powered by <strong>BLENDER</strong></a>
-					</li>
-				</ul>
+
+				<div class="hold">
+					<ul>
+						<li class="copy">
+							<a href="<?php echo esc_url( home_url() ); ?>"><?php printf( esc_html__( '&copy; Omni Health Care ' ) ); ?><?php echo date('Y'); ?></a>
+						</li>
+						<li>
+							<a href="<?php echo esc_attr( esc_url( get_permalink(3) ) ); ?>"><?php esc_html_e( 'Privacy', 'blender2023' ) ?></a>
+						</li>
+						<li>
+							<a href="https://www.blendermedia.com" target="_blank">Designed & Powered by <strong>BLENDER</strong></a>
+						</li>
+					</ul>
+				</div>
 				
 			</div>
 		</div><!-- .site-info -->

@@ -14,7 +14,7 @@ if ( ! empty( $categories ) ) {
 	// get the current taxonomy term
 	$term = 'term_' . $categories[0]->term_id;
 	// vars
-	$hero_image = get_field('bg_image', $term);
+	$hero_image = get_field('background_image', $term);
 }
 
 ?>
