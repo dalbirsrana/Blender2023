@@ -546,7 +546,6 @@ input[type=submit] {
   color: #fff;
   padding: 10px 16px;
   height: 44px;
-  min-width: 132px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1270,6 +1269,7 @@ textarea {
           align-items: center;
 }
 .site-header .site-branding {
+  position: relative;
   margin: 0 12px 0 0;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -1280,9 +1280,17 @@ textarea {
   width: 100%;
   height: 60px;
 }
-.site-header .site-branding > div img {
+.site-header .site-branding a {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+}
+.site-header .site-branding img {
   width: 100%;
   height: 68px;
+  position: absolute;
+  inset: 0;
 }
 .site-header .search-nav {
   display: none;
@@ -1317,7 +1325,7 @@ textarea {
   .site-header .site-branding > div {
     height: 90px;
   }
-  .site-header .site-branding > div img {
+  .site-header .site-branding img {
     height: 109px;
   }
   .site-header .logo {
@@ -2316,6 +2324,39 @@ Page layout
 }
 .single-post .has-text-align-left {
   text-align: left;
+}
+
+/*************************************************
+Community Single Page
+*************************************************/
+.single-community main {
+  position: relative;
+}
+.single-community .breadcrumb {
+  position: absolute;
+  top: 20px;
+}
+.single-community .breadcrumb a span {
+  display: none;
+}
+.single-community .breadcrumb a {
+  background-color: #ffffff;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.single-community .breadcrumb a i {
+  font-size: 16px;
+  color: #4953a4;
 }
 
 /* Home page
