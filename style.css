@@ -2334,12 +2334,14 @@ Community Single Page
 }
 .single-community .breadcrumb {
   position: absolute;
-  top: 20px;
+  top: 16px;
+  z-index: 2;
 }
 .single-community .breadcrumb a span {
   display: none;
 }
 .single-community .breadcrumb a {
+  color: #4953a4;
   background-color: #ffffff;
   height: 36px;
   width: 36px;
@@ -2355,8 +2357,118 @@ Community Single Page
           align-items: center;
 }
 .single-community .breadcrumb a i {
-  font-size: 16px;
-  color: #4953a4;
+  font-size: 15px;
+  font-weight: 900;
+}
+.single-community .slider-wrap {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .single-community .slider-wrap {
+    display: none;
+  }
+}
+.single-community .slider-wrap .slide-counter {
+  width: 48px;
+  height: 24px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 2;
+  right: 16px;
+  bottom: 16px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: center;
+}
+.single-community #slider_property_pictures img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+@media (min-width: 400px) {
+  .single-community #slider_property_pictures img {
+    height: 240px;
+  }
+}
+@media (min-width: 576px) {
+  .single-community #slider_property_pictures img {
+    height: 280px;
+  }
+}
+.single-community .entry-header {
+  padding-top: 36px;
+}
+.single-community .entry-title {
+  text-align: center;
+}
+.single-community .title-content {
+  border-bottom: 1.5px solid #9b927b;
+  padding-bottom: 48px;
+}
+.single-community .title-content .contact {
+  margin-bottom: 32px;
+}
+.single-community .title-content .contact a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+.single-community .title-content .contact span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.single-community .title-content .contact span .fas {
+  color: #f47f72;
+  margin-right: 8px;
+}
+.single-community .inquire {
+  text-align: center;
+}
+.single-community .button.mailto {
+  padding-left: 38px;
+  padding-right: 38px;
+}
+.single-community .button.mailto i.fas {
+  margin-right: 8px;
+}
+.single-community .property-pictures {
+  display: none;
+}
+@media (min-width: 768px) {
+  .single-community header {
+    border-bottom: 1.5px solid #9b927b;
+  }
+  .single-community main {
+    padding-top: 48px;
+  }
+  .single-community .breadcrumb {
+    position: static;
+    padding: 16px 0;
+  }
+  .single-community .breadcrumb a span {
+    display: inline-block;
+    margin-left: 8px;
+    text-decoration: underline;
+  }
+  .single-community .breadcrumb a {
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    font-weight: 600;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .single-community .entry-title {
+    text-align: left;
+  }
 }
 
 /* Home page

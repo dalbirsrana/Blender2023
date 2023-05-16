@@ -47,14 +47,72 @@ Community Single Page
 	main {position: relative;}
 
 	.breadcrumb {
-		position: absolute; top: 20px;
-
+		position: absolute; top: 16px; z-index: 2;
 		a span {display: none;}
-		a {
+		a { color: $secondary;
 			background-color: #ffffff; height: 36px; width: 36px; border-radius: 50%;
 			display: flex; justify-content: center; align-items: center;
-			i {font-size: 16px; color: $secondary;}
+			i {font-size: 15px; font-weight: 900;}
+		}
+	}
+
+	.slider-wrap {
+		position: relative;
+		@media (min-width: $md) { display: none;}
+		.slide-counter {
+			width: 48px; height: 24px; border-radius: 4px; background-color: rgba(0,0,0,0.3);
+			position: absolute; z-index: 2; right: 16px; bottom: 16px;
+			color: #ffffff; font-size: 14px; font-weight: 600; line-height: 28px; text-align: center;
+		}
+	}
+
+	#slider_property_pictures {
+		img {height: 200px; object-fit: cover; object-position: center;}
+		@media (min-width: 400px) { img{height: 240px;} }
+		@media (min-width: $sm) { img{height: 280px;} }
+	}
+
+
+	.entry-header {padding-top: 36px;}
+	.entry-title {text-align: center;}
+	.title-content {
+		border-bottom: 1.5px solid $color__line;
+		padding-bottom: 48px;
+		.contact {
+			margin-bottom: 32px;
+			a {font-weight: 600; text-decoration: underline;}
+			span {display: inline-flex; line-height: 1.2; margin-bottom: 8px;}
+			span .fas {color: $primary; margin-right: 8px;}
+		}
+	}
+
+	.inquire {text-align: center; }
+	.button.mailto {padding-left: 38px; padding-right: 38px;
+		i.fas {margin-right: 8px;}
+	}
+
+	.property-pictures {
+		display: none;
+	}
+
+
+
+
+
+	@media (min-width: $md) {
+
+		header {border-bottom: 1.5px solid $color__line;}
+		main {padding-top: 48px;}
+
+		.breadcrumb {
+			position: static; padding: 16px 0;
+			a span {display: inline-block; margin-left: 8px; text-decoration: underline;}
+			a {background-color: transparent; width: auto; height: auto; font-weight: 600; justify-content: flex-start;}
 		}
 
+		.entry-title {text-align: left;}
+
+
 	}
+
 }
