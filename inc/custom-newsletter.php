@@ -10,7 +10,7 @@
 class GoogleRecaptcha {
     /* Google recaptcha API url */
     private $google_url = "https://www.google.com/recaptcha/api/siteverify";
-    private $secret = '6Ld8eVImAAAAAH0aiZGlqmCwH9oNnhmE9zhggTHW';
+    private $secret = '';
  
     public function VerifyCaptcha($response)
     {
