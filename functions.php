@@ -272,6 +272,6 @@ function disable_emojis() {
 
    // Method 2: Setting.
 function my_acf_init() {
-    acf_update_setting('google_api_key', 'AIzaSyCjbnxJ8pt0BlZ57h1vgAP2gyQf6g3PwCo');
+    acf_update_setting('google_api_key', '');
 }
 add_action('acf/init', 'my_acf_init');
