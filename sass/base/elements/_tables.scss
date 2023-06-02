@@ -1,12 +1,25 @@
 table {
-	margin: 0 0 1.5em;
+	margin: 0 0 3em;
 	width: 100%;
+	border-collapse: collapse;
+	tr:nth-child(odd) {background: #ffffff;}
+	tr:last-child {border-bottom: 1.5px solid $color__line;}
+	td {padding: 22px 8px 20px 16px; vertical-align: top;}
+	td:last-child {padding-right: 16px;}
 }
 
+.accordion {
+	table tr:nth-child(odd) {background: $color__background-body;}
+}
+
+table.two-column {
+	min-width: 600px;
+	td:first-child {width: 184px;}
+	@media (min-width: $lg) {td:first-child {width: 208px;}}
+}
 
 div.table-overflow { width: 100%; overflow-x: auto; }
-div.table-overflow { width: 100%; overflow-x: auto; }
 div.table-overflow + div.arrow { display: none; color: #c1c6d2 !important; text-align: center; }
-div.table-overflow + div.arrow::after { font-family: FontAwesome; font-size: 15px; content: '\f07e'; }
-div.table-overflow.show + div.arrow { position: relative; height: 30px; width: 100%; display: block; }
+div.table-overflow + div.arrow::after { font-family: FontAwesome; font-size: 14px; content: '\f07e'; }
+div.table-overflow.show + div.arrow { position: relative; height: 56px; width: 100%; display: block; }
 div.table-overflow.show > table { margin-bottom: 0px !important; }

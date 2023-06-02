@@ -16,7 +16,7 @@ if ( ! defined( '_STYLE_VERSION' ) ) {
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '0.0.1' );
+	define( '_S_VERSION', '0.0.4' );
 }
 
 /**
@@ -89,6 +89,19 @@ function blender2023_setup() {
 		)
 	);
 
+	add_theme_support( 
+		'custom-header',
+		array(
+			'default-image'      => get_template_directory_uri() . '/graphics/default-image.jpg',
+			'default-text-color' => '000',
+			'header-text'        => false,
+			'width'              => 1600,
+			'height'             => 500,
+			'flex-width'         => true,
+			'flex-height'        => true,
+		)
+	);
+
 }
 add_action( 'after_setup_theme', 'blender2023_setup' );
 
@@ -100,7 +113,7 @@ add_action( 'after_setup_theme', 'blender2023_setup' );
  * @global int $content_width
  */
 function blender2023_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'blender2023_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'blender2023_content_width', 1200 );
 }
 add_action( 'after_setup_theme', 'blender2023_content_width', 0 );
 
@@ -166,6 +179,16 @@ add_post_type_support( 'page', 'excerpt' );
 
 /* Disable WordPress Admin Bar for all users */
 add_filter( 'show_admin_bar', '__return_false' );
+
+
+//Limiting Search to posts
+function searchfilter($query) {
+    if ($query->is_search && !is_admin() ) {
+        $query->set('post_type', array('post','community'));
+    }
+return $query;
+}
+add_filter('pre_get_posts','searchfilter');
 
 
 function custom_wp_remove_global_css() {
@@ -243,3 +266,12 @@ function disable_emojis() {
 	
    return $urls;
    }
+
+
+
+
+   // Method 2: Setting.
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyCjbnxJ8pt0BlZ57h1vgAP2gyQf6g3PwCo');
+}
+add_action('acf/init', 'my_acf_init');

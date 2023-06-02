@@ -1,48 +1,47 @@
-section.signup {
-    padding: $spacer * 6 $spacer * 5;
-    margin-bottom: $spacer * 6;
+.site-footer {
 
-    h2 {
-        margin: 0 0 $spacer * 3 0;
-        @include font__style-1__bold;
-        font-size: 22px;
-        @media (min-width: $md) {
-            font-size: 30px;
+    .sign-up {
+        padding-bottom: 56px;
+        border-bottom: 1.5px solid rgba(253, 251, 246, 0.2);
+        display: flex; flex-direction: column; align-items: center;
+
+        .wrapper {position: relative;}
+        .signup-message {color: #ffffff; position: absolute; bottom: -32px;}
+
+    
+        > div {max-width: 540px; width: 100%;}
+        form {width: 100%;}
+        .submit button {margin-top: 16px;
+            &:hover, &:focus { background-color: #ffffff; color: $secondary; }
         }
-    }
-
-    .form-group {
-        position: relative;
-        margin-bottom: $spacer * 5;
-        &:last-child {
-            margin-bottom: 0;
+        .form-group {margin-bottom: 8px; text-align: center; width: 100%;}
+    
+        h3 {color: #ffffff; text-align: center;}
+        input[type=text] {
+            border: 1px solid #ffffff;
+            background-color: #ffffff;
+            width: 100%; 
+            color: #665b3e;
+            &::placeholder { color: #665b3e; opacity: 0.80; }
+            &:-ms-input-placeholder { color: #665b3e; opacity: 0.80; }
+            &::-ms-input-placeholder { color: #665b3e; opacity: 0.80; }
         }
-       
-        input[type=text], input[type=email] {
-            width: 100%;
-            line-height: normal;
-            padding: 8px;
-            padding-right: 46px;
-            appearance: none;
-            background-color: transparent;
-            border: none;
-            border-radius: 0;
+    
+        @media (min-width: $lg) {
+            > div {max-width: 780px;}
+            h3 {margin-bottom: 32px; line-height: 1.1;}
+            form {display: flex;}
+            .form-group {margin-right: 16px;}
+            .form-group.submit { flex: 0 1 140px; margin-right: 0;
+                button {margin-top: 0;}
+            }
         }
+    
+        @media (min-width: $xl) {
+            h3 {margin-right: 16px; margin-bottom: 12px; }
+            flex-direction: row; justify-content: space-between;
+        }
+    
+    
     }
-
-    label {
-        position: absolute;
-        left: 8px;
-        padding: 8px;
-        z-index: -1;
-    }
-
-    input:valid + label,
-    input:not(:placeholder-shown) + label {
-        z-index: -1;
-        left: auto;
-        right: 8px;
-        font-size: 12px;
-        line-height: 1.2;
-    }
-} 
+}

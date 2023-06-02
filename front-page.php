@@ -14,14 +14,17 @@ get_header();
 	
 	<section class="hero">	
 		<div class="background">
+			<img class="mobile-banner" src="<?php the_field('mobile_hero_banner') ?>" alt="Banner Omni">
 			<?php the_post_thumbnail(); ?>
 		</div>
 
 		<div class="container">
 			<div class="content">
 				<h1 class="page-title"><?php bloginfo('description'); ?></h1>
-				<a href="/communities" class="button white">Find a Community</a>
-				<a href="#" class="button white">Get Informed</a>
+				<div class="hero-links">
+					<a href="/communities" class="button white wide">Find a Community</a>
+					<a href="#newsletter_signup" class="button white wide">Get Informed</a>
+				</div>
 			</div>
 		</div>
 
@@ -44,7 +47,7 @@ get_header();
 					<img src=<?php echo esc_url( $about['image']['url'] ); ?>" alt="about us">
 				</div>
 				<div class="col-12 col-md-6 col-xl-5 text">
-					<p class="p-20"><?php echo $about['text']; ?></p>
+					<p class="large"><?php echo $about['text']; ?></p>
 					<a href="<?php echo $about['view_more']; ?>" class="button">View our Communities</a>
 				</div>
 			</div>
@@ -121,7 +124,7 @@ get_header();
 						</figure>
 						<div class="content">
 							<h5><?php echo $where_to_start['tab_2_title']; ?></h5>
-							<a href="<?php echo $where_to_start['tab_2_link']; ?>" class="button">Learn More</a>
+							<a href="<?php echo $where_to_start['tab_2_link']; ?>" class="button">View Our Communities</a>
 						</div>
 					</div>
 				</div>
@@ -147,45 +150,10 @@ get_header();
 	</section>
 	<?php endif; ?>
 
-	<section class="latest-news">
-		<div class="container">
 
-			<header class="section-title">
-				<h3>Latest News</h3>
-				<a href="/news/" class="view-all">View All News</a>
-			</header>
-
-			<div class="row">
-			<?php
-				$args = array( 'cat' => 4, 'post_status' => 'publish', 'order' => 'DESC', 'orderby' => 'date', 'showposts' => 3  );
-				$news = new WP_Query( $args );
-				if( $news->have_posts() ) :
-					while( $news->have_posts() ):
-						$news->the_post();
-						printf(	'<div class="col-sm-6 col-lg-4">
-									<article>
-										<figure>%1$s</figure>
-										<div class="content">
-											<time>%2$s</time>
-											<h5 class="news-title"><a href="%3$s">%4$s</a></h5>
-											<div class="tag">%5$s</div>
-										</div>
-									</article>
-								</div>', 
-								get_the_post_thumbnail(), get_the_date(), get_permalink(), get_the_title(), get_field('community')->post_title
-							);
-					endwhile;
-				wp_reset_postdata();
-				else :
-					printf( '<div class="col-12"><h6>No Post Found</h6></div>' );
-					// esc_html_e( '');
-				endif;
-			?>
-			</div>
-
-		</div>
-	</section>
-
+	<?php
+		get_template_part( 'template-parts/content', 'latest-news' );
+	?>
 
 </main><!-- #main -->
 

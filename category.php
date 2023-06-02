@@ -14,45 +14,33 @@ $term = get_queried_object();
 // vars
 $hero_image = get_field('background_image', $term);
 ?>
-	<main id="primary" class="site-main inner-page">
+	<main id="primary" class="site-main">
         
-        <header class="hero">
+        <header class="page-header">
 			<div class="background">
                 <img src="<?php echo $hero_image['url']; ?>" alt="<?php echo $hero_image['alt']; ?>" >
             </div>
-			<div class="container hidden">
+			<div class="container">
                 <?php single_term_title( '<h1 class="page-title">', '</h1>' ); ?>
 			</div>
 		</header><!-- .page-header -->
 
 
-
 		<section class="posts">
             <div class="container">
-                <?php if ( have_posts() ) : ?>
-
-                    <?php if (is_category( 'press-releases' )) :
-                        /* Start the Loop */
-                        while ( have_posts() ) : the_post();
-                            get_template_part( 'template-parts/content', 'category-news' );
-                        endwhile;
-                    ?>
-
-                    <?php else: ?>
-                        <div class="row insights">
-                        <?php 
+                <div class="row">
+                    <?php
+                        if ( have_posts() ) :
                             /* Start the Loop */
-                            while ( have_posts() ) : the_post();
+                            while ( have_posts() ) : 
+                                the_post();
                                 get_template_part( 'template-parts/content', 'category' );
                             endwhile;
-                        ?>
-                        </div>
-                    <?php endif;
-
-                else : get_template_part( 'template-parts/content', 'none' );
-
-                endif;
-                ?>
+                        else : 
+                            get_template_part( 'template-parts/content', 'none' );
+                        endif;
+                    ?>
+                </div>
             </div>
         </section>
 

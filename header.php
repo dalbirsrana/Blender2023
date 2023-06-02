@@ -22,15 +22,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TQV7MPR');</script> -->
 <!-- End Google Tag Manager -->
 
-<!-- Google tag (gtag.js) -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-89P9D46K4P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2QPW1WPCX7"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
-  gtag('config', 'G-89P9D46K4P');
-</script> -->
+	gtag('config', 'G-2QPW1WPCX7');
+	</script>
 
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="<?php bloginfo('name'); ?>">
 	<meta property="og:description" content="<?php if ( is_single() ) { single_post_title('', true); } else { bloginfo('description'); } ?>">
-	<meta property="og:image" content="<?php echo get_template_directory_uri() ?>/OG.jpg">
+	<meta property="og:image" content="<?php echo get_template_directory_uri() ?>/graphics/og.jpg">
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image">
@@ -49,7 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta property="twitter:url" content="<?php echo esc_url( bloginfo('url') ); ?>">
 	<meta name="twitter:title" content="<?php bloginfo('name'); ?>">
 	<meta name="twitter:description" content="<?php if ( is_single() ) { single_post_title('', true); } else { bloginfo('description'); } ?>">
-	<meta name="twitter:image" content="<?php echo get_template_directory_uri() ?>/OG.jpg">
+	<meta name="twitter:image" content="<?php echo get_template_directory_uri() ?>/graphics/og.jpg">
 	
 	<?php wp_head(); ?>
 
@@ -60,15 +60,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<!-- font-family: p22-mackinac-pro, serif; font-family: poppins, sans-serif; -->
 	<link rel="stylesheet" href="https://use.typekit.net/tsm6wfi.css">
 
-
 	<script src="https://kit.fontawesome.com/13b689b085.js" crossorigin="anonymous"></script>
-	<!-- RECAPTCHA -->
-	<!-- <script src="//www.google.com/recaptcha/api.js?render=6LfAA1skAAAAAK_mVJdTmAuDzibj8fsyM2PMd9G6"></script> -->
-	<!-- <script> var $recaptcha_site_key = "6LfAA1skAAAAAK_mVJdTmAuDzibj8fsyM2PMd9G6"; </script> -->
-
-	<?php if ( is_front_page() ) { ?>
-		<!-- <link rel="preload" as="image" href="https://carbonneutral.blendermedia.com/wp-content/uploads/2023/02/home_banner-scaled.jpg" > -->
-    <?php }  ?>
 
 </head>
 
@@ -87,10 +79,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<div class="container">
 			<div class="site-branding">
 				<div class="logo">
-					<a href="/"><img src="<?php echo get_template_directory_uri(); ?>/graphics/branding/omni_logo.svg" alt="Omni Quality Living Logo"></a>
+					<a href="/"><img src="<?php echo get_template_directory_uri(); ?>/graphics/branding/omni_logo.svg?v=1" alt="Omni Quality Living Logo"></a>
 				</div>
 				<div class="logo-white">
-					<a href="/"><img src="<?php echo get_template_directory_uri(); ?>/graphics/branding/omni_logo_white.svg" alt="Omni Quality Living Logo"></a>
+					<a href="/"><img src="<?php echo get_template_directory_uri(); ?>/graphics/branding/omni_logo_white.svg?v=1" alt="Omni Quality Living Logo"></a>
 				</div>
 			</div>
 			<nav class="main-navigation">
@@ -110,6 +102,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								)
 							);
 						?>
+
+						<div class="spacer"><hr></div>
 						
 						<?php
 							wp_nav_menu(

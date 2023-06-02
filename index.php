@@ -18,12 +18,15 @@ get_sidebar();
 
 		<?php
 		if ( have_posts() ) :
-
 			if ( is_home() && ! is_front_page() ) :
 		?>
-            <header class="screen-reader-text">
-                <h1 class="page-title"><?php single_post_title(); ?></h1>
-            </header>
+        <header class="page-header">
+			<div class="background"><?php the_post_thumbnail(); ?></div>
+			<div class="container">
+				<h1 class="page-title"><?php single_post_title(); ?></h1>
+			</div>
+        </header>
+
 		<?php
 			endif;
 

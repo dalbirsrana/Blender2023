@@ -12,9 +12,9 @@ get_header();
 
 	<main id="primary" class="site-main inner-page">
 
-		<header class="hero">
+		<header class="page-header">
 			<div class="background">
-				<img src="<?php  echo esc_url( get_stylesheet_directory_uri() );  ?>/images/intro_banner_lg.jpg" alt="banner search">
+				<img src="<?php  echo esc_url( get_stylesheet_directory_uri() );  ?>/graphics/default-image.jpg" alt="banner search">
 			</div>
 			<div class="container">
 				<h1 class="page-title"><?php esc_html_e( 'Search', 'blender2023' ); ?></h1>

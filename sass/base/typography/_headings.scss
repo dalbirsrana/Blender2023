@@ -2,8 +2,8 @@ h1 {font-size: 2.25rem; line-height: 1.11; @include font__style-2__medium;}
 h2 {font-size: 2rem; line-height: 1.13; @include font__style-2__medium;}
 h3 {font-size: 1.75rem; line-height: 1.3; @include font__style-2__medium;}
 h4 {font-size: 1.375rem; line-height: 1.27; @include font__style-2__medium;}
-h5 {font-size: 1.125rem; line-height: 1.33; @include font__style-1__medium;}
-h6 {font-size: 1rem; line-height: 1.25; @include font__style-1__medium;}
+h5 {font-size: 1.125rem; line-height: 1.33; margin-bottom: 1em; @include font__style-1__medium;}
+h6 {font-size: 1rem; line-height: 1.25; margin-bottom: 1em; @include font__style-1__medium;}
 
 @media (min-width: $md) {
 	h1 {font-size: 3rem;}

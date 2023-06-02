@@ -45,9 +45,7 @@
 		background-color: #ffffff;
 	}
 		  
-	#menu-toggle:checked + .menu-button-container .menu-button {
-		background: rgba(255, 255, 255, 0);
-	}
+	#menu-toggle:checked + .menu-button-container .menu-button {background: rgba(255, 255, 255, 0);}
 		  
 	#menu-toggle:checked + .menu-button-container .menu-button::after {
 		margin-top: 0px;
@@ -77,44 +75,44 @@
 		transition: all 250ms ease;
 
 		> .hold {height: 100%; overflow-y: scroll;}
+
+		.spacer {padding: 16px;
+			hr {background-color: rgba(255, 255, 255, 0.3);}
+		}
 	}
 
-	.main-menu {
-		padding: 16px 16px 60px;
-		a {font-size: 16px; line-height: 24px; font-weight: 400; color: #ffffff;}
-		> li { 
-			margin-bottom: 16px;
+	.main-menu { padding: 16px 16px 40px;
+		a {font-size: 16px; line-height: 1.25; font-weight: normal; color: #ffffff;}
+		li {padding-bottom: 18px;}
+		> li {
 			> a {
-				font-weight: 500;
-				text-align: left;
-				color: #fff;
-				position: relative;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
+				text-align: left; color: #fff; position: relative; 
+				display: flex; justify-content: space-between; align-items: center;
 			}
-			> ul.sub-menu {
-				display: none;
-				padding: 16px 0 0 16px;
-				li {margin-bottom: 16px;}
+			> ul.sub-menu { display: none; padding: 16px 0 0 14px; }
+		}
+		> li.menu-item-has-children {
+			> a::after {
+				content: "+";
+				width: 20px;
+				height: 32px;
+				color: #FFF;
+				font-weight: normal;
+				font-size: 32px;
+				text-align: center;
 			}
+			&.active > a::after {content: "-";}
 		}
-		&.top > li > a { @include font__style-2__medium; font-size: 22px; line-height: 28px; }
-		// &.bottom > li {margin-bottom: 16px;}
-		&.bottom > li > a {font-size: 14px; line-height: 24px;}
-	}
-
-	.main-menu > li.menu-item-has-children {
-		> a::after {
-			content: "+";
-			width: 30px;
-			height: 40px;
-			color: #FFF;
-			font-weight: 400;
-			font-size: 32px;
-			text-align: right;
+		&.top > li > a {
+			@include font__style-2__medium; 
+			font-size: 22px; 
+			line-height: 28px;
+			font-weight: 500;
 		}
-		&.active > a::after {content: "-";}
+		&.bottom li {padding-bottom: 16px;}
+		&.bottom li:last-child {padding-bottom: 4px;}
+		&.bottom > li > a {font-size: 16px; font-weight: normal; line-height: 1.25;}
+		&.bottom > li.menu-item-has-children > a::after {font-size: 14px; height: 14px;}
 	}
 
 }
@@ -134,6 +132,7 @@
 			visibility: visible;
 			> .hold {height: auto; overflow-y: visible;}
 			.main-menu > li.menu-item-has-children > a::after { content: none; }
+			.spacer {display: none;}
 		}	
 	}
 	#primary-menu-mobile {display: none;}
@@ -180,7 +179,7 @@
 		}
 	
 		> li ul li {
-			display: block; margin: 0;
+			display: block; margin: 0; padding: 0;
 			a {
 				display: inline-block;
 				height: 40px; width: 100%;

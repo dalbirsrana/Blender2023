@@ -11,7 +11,7 @@ input[type="submit"] {
 	border-radius: 30px;
 	background: $primary; 
 	color: #fff;
-	padding: 10px 16px;
+	padding: 12px 28px 10px;
 	height: 44px;
 	display: inline-flex; 
 	justify-content: center; 
@@ -21,7 +21,6 @@ input[type="submit"] {
 	&:hover, &:focus {
 		background-color: $secondary;
 		color: #fff;
-		box-shadow: 0 3px 6px 2px #00000033;
 	}
 }
 
@@ -32,8 +31,8 @@ input[type="submit"] {
 	input[type="reset"],
 	input[type="submit"] {
 		height: 54px;
-		padding: 10px 24px;
 	}
+	.wide { padding: 12px 36px 10px; }
 }
 
 .button.white {
@@ -42,5 +41,28 @@ input[type="submit"] {
 	&:hover, &:focus {
 		background-color: $secondary;
 		color: $color__background-body;
+	}
+}
+
+.tag-button {
+	cursor: pointer;
+	@include font__style-1__normal;
+	font-size: 14px; 
+	line-height: normal;
+	border: 1px solid $color__line; 
+	border-radius: 30px;
+	background: #fff; 
+	color: $color__link;
+	padding: 6px 16px;
+	height: 36px;
+	display: inline-flex; 
+	justify-content: center; 
+	align-items: center;
+	transition: all .3s ease;
+}
+
+.button {
+	.fas {
+		margin-right: 8px;
 	}
 }

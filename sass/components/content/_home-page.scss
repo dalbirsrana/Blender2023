@@ -2,22 +2,35 @@
     // Hero Section
     section.hero {
         padding: 0;
-        position: relative; 
-        min-height: 680px;
-        display: flex; justify-content: flex-start; align-items: center;
+        position: relative;
+        height: calc(100dvh - 60px);
+        min-height: 660px;
+        display: flex; justify-content: flex-start; align-items: flex-end;
         // background-color: hsla(0, 0%, 0%, 0.3);
         .background {
             position: absolute; z-index: -1; inset: 0; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;
-            & > img {width: 100%; height: 100%; object-fit: cover; object-position: center top;}
+            > img {width: 100%; height: 100%; object-fit: cover; object-position: center;}
+            img + img {display: none;}
         }
 
-        .content {max-width: 600px;}
+        .content {max-width: 600px; padding: 96px 0;}
         .page-title {color: #ffffff; margin: 0 0 48px;}
-        .button {margin-right: 16px;}
+        .button {margin-right: 16px; margin-bottom: 8px;}
 
+        @media (min-width: $sm) {
+            .background {
+                > img {object-position: right center;}
+                > .mobile-banner {display: none;}
+                img + img {display: block;}
+            }
+        }
         @media (min-width: $md) {
+            justify-content: flex-start; align-items: center;
             min-height: 764px; margin-bottom: 0;
             .page-title {font-size: 72px; line-height: 80px;}
+        }
+        @media (min-width: $lg) {
+            .background > img {object-position: center;}
         }
         @media (min-width: 1600px) {min-height: 880px;}
     }
@@ -38,33 +51,33 @@
 section.discover {
     background-color: $secondary;
     h3, li {color: #ffffff;} 
-    h3 {max-width: 220px; margin-left: auto; margin-right: auto;}
+    h3 {max-width: 220px; text-align: center; margin-left: auto; margin-right: auto;}
 
     .left {align-self: center;}
     .slider-hold {
         border-radius: 20px;
         background-color: #ffffff;
-        padding: 24px 20px 100px;
+        padding: 24px 20px 88px;
         .tns-outer {min-height: 400px;}
         .slide {padding-bottom: 24px;}
     }
+    .tns-outer .tns-controls { left: 50%; transform: translateX(-50%); }
     @media (min-width: $md) {
-        h3 {max-width: 260px; margin-left: 0;}
-        .slider-hold {padding: 44px 44px 108px;}
+        h3 {max-width: 260px; text-align: left; margin-left: 0;}
+        .slider-hold {padding: 44px 44px 96px;}
         #slider-discover-links {display: block;}
+        .tns-outer .tns-controls { left: 0; transform: translateX(0); }
     }
-    @media (min-width: $xl) {
-        .slider-hold {padding: 46px 88px 108px;}
-    }
+    @media (min-width: $xl) { .slider-hold {padding: 46px 88px 104px;} }
 }
 
 #slider-discover {
     display: flex; align-items: stretch;
-    h4 {color: $secondary; display: flex; align-items: center; justify-content: flex-start;} 
-
+    h4 {color: $secondary; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;} 
     h4::before {
-        content: ""; display: block; height: 124px; width: 124px;
-        position: relative; margin-right: 30px;
+        content: ""; 
+        display: block; height: 84px; width: 84px; 
+        position: relative; margin-bottom: 20px;
         background-position: center; background-repeat: no-repeat; background-size: contain;
     }
     .title-1::before {background-image: url("graphics/homepage_icons/respect.svg");} 
@@ -73,6 +86,11 @@ section.discover {
     .title-4::before {background-image: url("graphics/homepage_icons/supportive.svg");}
     .title-5::before {background-image: url("graphics/homepage_icons/health.svg");}
     .title-6::before {background-image: url("graphics/homepage_icons/feedbacks.svg");}
+
+    @media (min-width: $md) {
+        h4 {flex-direction: row;}
+        h4::before {width: 124px; height: 124px; margin-right: 32px; margin-bottom: 0;}
+     }
 }
 
 @property --cir{
@@ -95,7 +113,7 @@ section.discover {
         transition: all 300ms ease;
     }
     li.tns-nav-active span {
-        animation: circular 3s linear forwards;
+        animation: circular 8s linear forwards;
         // background: conic-gradient( #ffffff 360deg, rgba(255, 255, 255, 0.2) 0deg );
     }
     li.tns-nav-active {color: #ffffff;}
@@ -155,57 +173,3 @@ section.career {
     .text > div {max-width: 416px;}
     .image img {border-radius: 24px;}
 }
-
-
-//Latest News Footer Section
-section.latest-news {
-    background-color: #ffffff;
-
-    header {
-        margin-bottom: 3rem;
-        display: flex; 
-        justify-content: space-between;
-        align-items: flex-end;
-        > * {margin-bottom: 0;}
-        a {text-decoration: underline;}
-    }
-    article {
-        border: 1px solid #9b927b;
-        border-radius: 20px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-    figure {margin: 0;
-        img {
-            display: block;
-            height: 216px; width: 100%;
-            object-fit: cover; object-position: center;
-        }
-    }
-    .content {
-        position: relative;
-        flex-basis: 100%; padding: 16px 16px 50px;
-        time {display: block; font-size: 14px;}
-        h5 {margin: 10px 0 16px;}
-        a {color: $secondary;}
-        a:hover, a:focus {opacity: 0.8;}
-
-        .tag {
-            color: #665b3e;
-            position: absolute; bottom: 22px;
-            font-size: 14px; font-weight: 500; line-height: 16px;
-            height: 28px; padding: 7px 20px 5px 20px;
-            border: solid 1px #9b927b;
-            border-radius: 20px;
-        }
-
-        @media (min-width: $md) {
-            padding: 20px 24px 50px;
-        }
-    }
-
-
-}
-

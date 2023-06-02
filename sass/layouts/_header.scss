@@ -16,42 +16,40 @@
 
     .site-branding {
         position: relative;
-        margin: 0 $spacer 0 0;
+        margin: 4px $spacer 0 0;
         flex: 0 0 auto;
         width: 80px;
         > div {width: 100%; height: 60px;}
-        a {position: absolute; height: 100%; width: 100%; inset: 0;}
-        img {width: 100%; height: 68px; position: absolute; inset: 0;}
+        a {height: 100%; width: 100%; display: block;}
+        img {width: 100%; height: auto; display: block;}
     }
 
     .search-nav {display: none;}
     .logo-white {display: none;}
     .logo {display: block;}
-
-    @media (width < $lg) {
-        &.open {
-            background-color: $secondary;
-            .logo {display: none;}
-            .logo-white {display: block;}
-        }
+    &.open {
+        background-color: $secondary;
+        .logo {display: none;}
+        .logo-white {display: block;}
     }
 
     @media (min-width: $lg) {
         .search-nav {display: block;}
-
         &.open {background-color: #fdfbf6;}
 
-        .site-branding {width: 125px;
-            > div {height: 90px;}
-            img {height: 109px;}
+        .site-branding {
+            margin: 8px $spacer 4px 0;
+            width: 116px;
+            transition: all .3s ease;
+            > div {height: 82px;}
+
+            .logo {display: block;}
+            .logo-white {display: none;}
         }
-        .logo {display: block;}
-        .logo-white {display: none;}
 
         &.sticky {
-            .site-branding {width: 88px; margin-right: 48px;}
-            .site-branding > div {height: 72px;}
-            .site-branding > div img {height: 82px;}
+            .site-branding {width: 88px; margin-right: 36px;}
+            .site-branding > div {height: 66px;}
             .main-navigation .menu-container {padding: 16px 0;}
         }
     }

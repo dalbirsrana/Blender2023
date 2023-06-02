@@ -10,7 +10,7 @@
 class GoogleRecaptcha {
     /* Google recaptcha API url */
     private $google_url = "https://www.google.com/recaptcha/api/siteverify";
-    private $secret = '6LfAA1skAAAAAJjMSyicelgydIHCRDr4ejtxBcOy';
+    private $secret = '6Ld8eVImAAAAAH0aiZGlqmCwH9oNnhmE9zhggTHW';
  
     public function VerifyCaptcha($response)
     {
@@ -77,9 +77,6 @@ function set_form(){
 		} elseif( preg_match('(htt|sex|naked|nude|chat|klicksen|profil)', $_POST['name'] ) === 1) {
 			$errors['name'] = 'ERROR';
             $output = '{"SUCCESS":"false", "CONFIRMATION":"Please enter a valid name"}';
-		} elseif ($_POST['consent'] != 'yes') {
-			$errors['consent'] = 'ERROR';
-            $output = '{"SUCCESS":"false", "CONFIRMATION":"Please select consent before submit"}';
 		} else {
             if ( check_email_address( $_POST['email'] ) ) {
             } else {
@@ -94,7 +91,7 @@ function set_form(){
 			$name = sanitize_text_field( $_POST['name'] );
 			$email = sanitize_email ( $_POST['email'] );
 
-			$message = "Subscription Request - Carbon Neutral ltd. <br><br>";
+			$message = "Subscription Request - Omni Quality Living. <br><br>";
 			$message .= "Name: " . $name . "<br>";
 			$message .= "Email: " . $email;
 		
@@ -102,7 +99,7 @@ function set_form(){
 
 			$to = "info@blendermedia.com";
 			// $to = "dalbir@blendermedia.com";
-			$subject = "Subscription Request from Carbon Neutral Ltd: " . $email;
+			$subject = "Subscription Request from Omni Quality Living: " . $email;
 			$headers = array('Content-Type: text/html; charset=UTF-8', 'From: ' . $name . '<donotreply@blendermedia.com>');
 		
 			if ( wp_mail($to, $subject, $message, $headers) ) {
@@ -114,7 +111,7 @@ function set_form(){
 			// Interface with Lyris
 			// $fields['name'] = $_POST['name'];
 			// $fields['email'] = $_POST['email'];
-			// $fields['list'] = 'mobileinvestor_com';
+			// $fields['list'] = '';
 			// //$fields['confirm'] = 'none';
 			// //$fields['showconfirm'] = 'F';
 

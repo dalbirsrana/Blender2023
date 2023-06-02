@@ -14,9 +14,9 @@
 	<footer id="colophon" class="site-footer">
 
 		<div class="container">
-			<div class="sign-up">
+			<div class="sign-up" id="newsletter_signup">
 				<h3>Subscribe to our newsletter</h3>
-				<div>
+				<div class="wrapper">
 					<form action="" method="post" name="newsletter" class="signup-form">
 						<div class="form-group">
 							<input required placeholder="Name" type="text" name="name" id="id-name" />
@@ -42,7 +42,7 @@
 
 				<div class="col-3 logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
-						<img width="125" height="109" src="<?php echo esc_url(get_template_directory_uri()); ?>/graphics/branding/omni_logo_white.svg" alt="logo Omni Quality Living">
+						<img width="125" height="109" src="<?php echo esc_url(get_template_directory_uri()); ?>/graphics/branding/omni_logo_white.svg?v=1" alt="logo Omni Quality Living">
 					</a>
 				</div>
 
@@ -52,7 +52,8 @@
 							array(
 								'theme_location'	=> 'menu-2',
 								'menu_id'			=> 'footer-menu',
-								'container'			=>  false
+								'container'			=>  false,
+								'depth'				=> 1
 							)
 						);
 					?>
@@ -62,10 +63,10 @@
 					<div>
 						<h6>Follow Us</h6>
 						<div class="social__links">
-							<a aria-label="Follow Us on Facebook" target="_blank" href="https://facebook.com/omniway"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-							<a aria-label="Follow Us on Twitter" target="_blank" href="https://www.twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							<a aria-label="Follow Us on Vimeo" target="_blank" href="https://vimeo.com/"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
-							<a aria-label="Follow Us on Linked In" target="_blank" href="https://www.linkedin.com/company/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+							<a aria-label="Follow Us on Facebook" target="_blank" href="http://www.facebook.com/OMNIHealthCare"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a aria-label="Follow Us on Twitter" target="_blank" href="http://twitter.com/omnihealthcare"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							<a aria-label="Follow Us on Vimeo" target="_blank" href="https://vimeo.com/theomniway"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+							<a aria-label="Follow Us on Linked In" target="_blank" href="https://www.linkedin.com/company/omniway"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -112,8 +113,12 @@
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 <script>
-window.addEventListener("load",function(){window.cookieconsent.initialise({palette:{popup:{background:"#eaf0f6",text:"#000000"},button:{background:"#106eac",text:"#ffffff"}},theme:"edgeless",content:{message:"We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.",dismiss:"Got it!",link:"Learn more",href:"<?php echo esc_url( bloginfo('url') ); ?>/privacy-policy/",target:"_self"}})});
+window.addEventListener("load",function(){window.cookieconsent.initialise({palette:{popup:{background:"#fdfbf6",text:"#000000"},button:{background:"#f47f72",text:"#ffffff"}},theme:"edgeless",content:{message:"We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.",dismiss:"Got it!",link:"Learn more",href:"<?php echo esc_url( bloginfo('url') ); ?>/privacy-policy/",target:"_self"}})});
 </script>
+
+<!-- RECAPTCHA -->
+<script src="//www.google.com/recaptcha/api.js?render=6Ld8eVImAAAAAHuZ1iYYxi7S-u-1uznzTVnFPrNx"></script>
+<script> var $recaptcha_site_key = "6Ld8eVImAAAAAHuZ1iYYxi7S-u-1uznzTVnFPrNx"; </script>
 
 
 </body>
