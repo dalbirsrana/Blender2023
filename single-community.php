@@ -377,7 +377,7 @@ $google_map = get_field('google_map');
 	</main><!-- #main -->
     
     
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjbnxJ8pt0BlZ57h1vgAP2gyQf6g3PwCo&callback=Function.prototype"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=Function.prototype"></script>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/property-map.js"></script>
 
 
